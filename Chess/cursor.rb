@@ -43,6 +43,10 @@ class Cursor
     key = KEYMAP[read_char]
     handle_key(key)
   end
+  
+  def call_update_pos(diff)
+    update_pos(diff)
+  end 
 
   private
 
@@ -79,5 +83,6 @@ class Cursor
   end
 
   def update_pos(diff)
+    @cursor_pos = MOVES[diff]
   end
 end
